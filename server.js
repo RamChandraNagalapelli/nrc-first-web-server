@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var PORT = process.env.PORT || 3000;
 
 var middleWare = {
 	logger: function(req, res, next) {
@@ -23,7 +24,6 @@ app.get('/about', function(req, res) {
 
 app.use(express.static(__dirname + '/Public'));
 
-var PORT = 3000;
 // console.log('server started with port: ' + server_port);
 app.listen(PORT, function() {
 	console.log('express server started!\nport: ' + PORT);
